@@ -1,0 +1,53 @@
+body {
+  background-color: black;
+  margin: 2px;
+  /* overflow: hidden; */
+}
+
+.twin {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20rem);
+  background-color: rgba(24, 211, 202, 0.801);
+  /* background-color: red; */
+  min-height: calc(100vh - 75px);
+  height: calc(100% - 75px);
+  /* padding: auto-fit; */
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+}
+.todo-footer {
+  bottom: 5px;
+
+  position: fixed;
+  right: 0%;
+}
+.header {
+  /* background-color:Red; */
+  /* background-color:cadetblue; */
+  color: cornsilk;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+}
+
+h1 {
+  font-family: "Montagu Slab", serif;
+  color: blanchedalmond;
+}
+.circle {
+  /* background-color: red; */
+  width: 40px;
+  height: 40px;
+  margin-right: 25px;
+  margin-bottom: 45px;
+}
+.circle:hover {
+  /* background-color: yellow; */
+  border-radius: 50%;
+  transform: scale(0.9, 0.9);
+  cursor: pointer;
+}

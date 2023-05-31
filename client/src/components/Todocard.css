@@ -1,0 +1,81 @@
+.totalwrap {
+  /* border: 2px dotted red; */
+  display: flex;
+  overflow: hidden;
+  background-color: rgb(214, 211, 23);
+  text-align: center;
+  border-radius: 1rem;
+  position: relative;
+  height: 180px;
+  padding: 15px 15px 15px 15px;
+  /* min-ma */
+  margin: 5px auto 5px auto;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+
+  /* border: 2px dotted red; */
+}
+
+.totalwrap:hover {
+  transform: scale(0.95, 0.95);
+  cursor: pointer;
+  box-shadow: 6px 10px 5px 0px rgba(201, 204, 8, 0.199);
+}
+p {
+  word-wrap: break-word;
+}
+.showtodo {
+
+  height: 100%;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+.delete-icon {
+  padding: 3px 2px 2px 2px;
+  margin: 2px 2px 2px 2px;
+  border-radius: 100%;
+  width: 25px;
+  height: 20px;
+}
+.delete-icon:hover {
+  background-color: black;
+  color: yellow;
+  cursor: pointer;
+}
+.icons {
+  position: absolute;
+  bottom: 15px;
+  right: 5px;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  /* border:2px solid; */
+}
+
+textarea {
+  margin-top: 12px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  height: 80%;
+  width: 100%;
+}
+
+.dateText{
+  position: absolute;
+  top: 5px;
+  right:10px;
+  padding: 3px 2px 2px 2px;
+  margin: 2px 2px 2px 2px;
+  font-size: 13px;
+  font-style: italic;
+  color: gray;
+
+}
+
+textarea :focus {
+  border: none;
+  outline: none;
+}

@@ -1,0 +1,26 @@
+.todo-input {
+  width: 200px;
+  height: 27px;
+  margin-bottom: 45px;
+}
+
+.todo-btn {
+  /* color: olivedrab; */
+  height: 25px;
+  width: 30px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.todo-btn:hover {
+  transform: scale(1.2, 1.2);
+}
+.todo-btn-close:hover {
+  transform: scale(1.2, 1.2);
+}
+.todo-btn-close {
+  /* color: rgb(173, 68, 68); */
+  height: 25px;
+  width: 30px;
+  cursor: pointer;
+  margin-right: 10px;
+}
