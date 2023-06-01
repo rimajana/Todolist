@@ -13,6 +13,21 @@ import { GrAddCircle } from "react-icons/gr";
 export default function App() {
   const [lists, setLists] = useState([]);
   const [disp, setDisp] = useState(true);
+  const[todos,setTodos]=useState([]);
+  
+  const getTodo=async(req,res)=>{
+    const response=await fetch("http://localhost:3001/api/todo/",{
+      method:"GET",
+     }
+    )
+    const data= await response.json();
+    // console.log("todopage",data);
+     setTodos(data);
+  };
+  
+  useEffect(() => {
+    getTodo();
+  }, [setTodos])
 
   function fun() {
     setDisp(!disp);
@@ -26,9 +41,7 @@ export default function App() {
         <h1>TODO LIST</h1>
       </div>
 
-      {/* <Todopage lists={lists} setlist={setLists} /> */}
-      <Todopage />
-      {/* <FontAwesomeIcon icon={faCoffee} /> */}
+      <Todopage todos={todos} setTodos={setTodos} />
 
       <div className="todo-footer">
         <GrAddCircle
@@ -39,8 +52,8 @@ export default function App() {
           }}
         />
         <Form
-          // setList={setLists}
-          setDisp={setDisp}
+          setTodos={setTodos}
+           setDisp={setDisp}
           style={{ display: !disp ? null : "none" }}
         />
       </div>

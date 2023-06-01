@@ -12,19 +12,28 @@ function Todocard(props) {
   const textareaRef = useRef(null);
 
   
-    const updateTodo=async(req,res)=>{
-      const response=await fetch(`http://localhost:3001/api/todo/${id}`,{
+    const updateTodo=async(ID)=>{
+      console.log("update",ID);
+      const response=await fetch(`http://localhost:3001/api/todo/${ID}`,{
         method:"PUT",
-        body:text,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          Description: text
+        })
       }
       )
       const data=await response.json();
+      props.setlists(data);
     };
-    const deleteTodo=async(req,res)=>{
-      const response=await fetch(`http://localhost:3001/api/todo/${id}`,{
+    const deleteTodo=async(ID)=>{
+      console.log("delete",ID) ;
+      const response=await fetch(`http://localhost:3001/api/todo/${ID}`,{
         method:"DELETE",
       });
       const data=await response.json();
+      props.setlists(data);
     };
 
   function updatetext(id) {
@@ -35,19 +44,19 @@ function Todocard(props) {
     }
     setID(id);
     setText(text);
-    updateTodo();
+    updateTodo(id);
     setUpdating(false);
   }
-  function deletetext(x) {
-    setID(x);
-    deleteTodo();
+  function deletetext(id) {
+    setID(id);    
+    deleteTodo(id);
   }
 
   return (
     <div className="totalwrap">
       <div className="showtodo" id={props.ele.id}>
        
-         {/* <p className="dateText">{props.ele.updatedAt.toDateString()}</p> */}
+         <p className="dateText">{ props.ele.updatedAt. slice(0, 10)}</p>
         {!isUpdating ? (
           <p className="cardtext">{props.ele.Description}</p>
         ) : (
