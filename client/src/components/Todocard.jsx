@@ -14,7 +14,7 @@ function Todocard(props) {
   
     const updateTodo=async(ID)=>{
       console.log("update",ID);
-      const response=await fetch(`http://localhost:3001/api/todo/${ID}`,{
+      const response=await fetch(`https://todolistrima.onrender.com/api/todo/${ID}`,{
         method:"PUT",
         headers: {
           'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ function Todocard(props) {
     };
     const deleteTodo=async(ID)=>{
       console.log("delete",ID) ;
-      const response=await fetch(`http://localhost:3001/api/todo/${ID}`,{
+      const response=await fetch(`https://todolistrima.onrender.com/api/todo/${ID}`,{
         method:"DELETE",
       });
       const data=await response.json();
