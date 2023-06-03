@@ -16,7 +16,7 @@ export default function App() {
   const[todos,setTodos]=useState([]);
   
   const getTodo=async(req,res)=>{
-    const response=await fetch("http://localhost:3001/api/todo/",{
+    const response=await fetch("https://todolistrima.onrender.com/api/todo/",{
       method:"GET",
      }
     )
