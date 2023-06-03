@@ -8,7 +8,7 @@ function Form({ setTodos,setDisp, style }) {
 
   const createTodo=async(req,res)=>{
     console.log("createTodo",input);
-    const response = await fetch("http://localhost:3001/api/todo/", {
+    const response = await fetch("https://todolistrima.onrender.com/api/todo/", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
